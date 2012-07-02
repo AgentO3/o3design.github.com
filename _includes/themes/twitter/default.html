@@ -13,8 +13,56 @@
 
     <!-- Le styles -->
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+	<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
 
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+	<style>
+	body {
+		font-size: 12px;
+	}
+	.o3-logo {
+		margin-top:20px;
+		font-family: 'Fredoka One', cursive;
+		font-size: 4.5em;
+		letter-spacing: -0.06em;
+		color: #66b6fc;
+	}
+
+	.o3-tag-line {
+		margin-top:10px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 1em;
+		letter-spacing: -0.05em;
+	}
+
+	h1 {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 2.5em;
+		color: #4E4E4E;
+	}
+	h2 {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 2em;
+	}
+	p {
+		color: #6B6B6B;
+		font-family: Geneva;
+		font-size: 1.1em;
+		line-height: 1.9em;
+		word-spacing: 0.1em;
+	}
+	.o3-logo-svg {
+		margin-right: -0.2em;
+	}
+	hr {
+		border: 2px dotted #D1D1D1;
+		border-style: none none dotted;
+		color: #fff;
+		background-color: #fff;
+	}
+	.o3-nav{font-size:1.2em; margin-top:10px; font-weight:bold;}
+	</style>
     <!-- Le fav and touch icons -->
   <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -26,18 +74,31 @@
 
   <body>
 
-    <div class="navbar">
-      <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-          <ul class="nav">
+		<div class="row"><div class="span12">
+			
+	      <ul class="o3-nav nav nav-pills pull-right">
             {% assign pages_list = site.pages %}
             {% assign group = 'navigation' %}
             {% include JB/pages_list %}
           </ul>
+          	<div class="o3-logo">
+				<span class="o3-logo-svg">
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 width="0.8em" height="0.8em" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+					<ellipse fill="#66B6FC" cx="150.483" cy="149.824" rx="144.145" ry="145.824"/>
+					<ellipse fill="#FFFFFF" stroke="#66B6FC" stroke-width="10" cx="152.314" cy="100.55" rx="60.349" ry="60.349"/>
+					<ellipse fill="#FFFFFF" stroke="#66B6FC" stroke-width="10" cx="205.67" cy="187.698" rx="60.349" ry="60.349"/>
+					<ellipse fill="#FFFFFF" stroke="#66B6FC" stroke-width="10" cx="98.33" cy="187.699" rx="60.349" ry="60.349"/>
+					</svg>
+					
+				 </span>
+				<span class="o3-design">Design</span>
+			</div> 
+			<div class="o3-tag-line"> {{ site.tagline }}</div>
+</div></div>
         </div>
-      </div>
-    </div>
+		<hr/>
 
     <div class="container">
 
