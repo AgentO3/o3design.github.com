@@ -1,120 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    <meta name="author" content="{{ site.author.name }}">
+	<head>
+		<meta charset="utf-8">
+		<title>{{ page.title }}</title>
+		{% if page.description %}
+		<meta name="description" content="{{ page.description }}">
+		{% endif %}
+		<meta name="author" content="{{ site.author.name }}">
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 
-    <!-- Le styles -->
-    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+		<!-- Le styles -->
+		<link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
-	<style>
-	body {
-		font-size: 12px;
-	}
-	.o3-logo {
-		margin-top:20px;
-		font-family: 'Fredoka One', cursive;
-		font-size: 4.5em;
-		letter-spacing: -0.06em;
-		color: #66b6fc;
-	}
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+		<script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.infinitescroll.min.js"></script>
+		<script type="text/javascript" src="http://masonry.desandro.com/jquery.masonry.min.js"></script>
 
-	.o3-tag-line {
-		margin-top:10px;
-		font-family: Arial, Helvetica, sans-serif;
-		font-size: 1em;
-		letter-spacing: -0.05em;
-	}
+		<style>
+			body {
+				font-size: 12px;
+			}
+			.o3-logo {
+				margin-top: 20px;
+				font-family: 'Fredoka One', cursive;
+				font-size: 3.5em;
+				letter-spacing: -0.06em;
+				color: #66b6fc;
+			}
 
-	h1 {
-		font-family: 'Open Sans', sans-serif;
-		font-size: 2.5em;
-		color: #4E4E4E;
-	}
-	h2 {
-		font-family: 'Open Sans', sans-serif;
-		font-size: 2em;
-	}
-	p {
-		color: #6B6B6B;
-		font-family: Geneva;
-		font-size: 1.1em;
-		line-height: 1.9em;
-		word-spacing: 0.1em;
-	}
-	.o3-logo-svg {
-		margin-right: -0.2em;
-	}
-	hr {
-		border: 2px dotted #D1D1D1;
-		border-style: none none dotted;
-		color: #fff;
-		background-color: #fff;
-	}
-	.o3-nav{font-size:1.2em; margin-top:10px; font-weight:bold;}
-	</style>
-    <!-- Le fav and touch icons -->
-  <!-- Update these with your own images
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-  -->
-  </head>
+			.o3-tag-line {
+				margin-top: 10px;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 1em;
+				letter-spacing: -0.05em;
+			}
 
-  <body>
+			h1 {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 2.5em;
+				color: #4E4E4E;
+			}
+			h2 {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 2em;
+			}
+			p {
+				color: #6B6B6B;
+				font-family: Geneva;
+				font-size: 1.1em;
+				line-height: 1.9em;
+				word-spacing: 0.1em;
+			}
+			.o3-logo-svg {
+				margin-right: -0.2em;
+			}
+			hr {
+				border: 2px dotted #D1D1D1;
+				border-style: none none dotted;
+				color: #fff;
+				background-color: #fff;
+			}
+			.o3-nav {
+				font-size: 1.2em;
+				margin-top: 10px;
+				font-weight: bold;
+			}
+			#content .col1 {
+				width: 120px;
+			}
+			#content .col2 {
+				width: 240px;
+			}
+			#content .col3 {
+				width: 480px;
+			}
+			.center {
+				text-align: center;
+			}
+			.post {
+				margin-left: 5px;
+				border: 1px solid #DADADA;
+				padding: 10px;
+				margin-bottom: 5px;
+			}
+		</style>
+		<!-- Le fav and touch icons -->
+		<!-- Update these with your own images
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+		-->
+	</head>
 
-        <div class="container">
-		<div class="row"><div class="span12">
-			
-	      <ul class="o3-nav nav nav-pills pull-right">
-            {% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
-          </ul>
-          	<div class="o3-logo">
-				<span class="o3-logo-svg">
-					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-						 width="0.8em" height="0.8em" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-					<ellipse fill="#66B6FC" cx="150.483" cy="149.824" rx="144.145" ry="145.824"/>
-					<ellipse fill="#FFFFFF" stroke="#66B6FC" stroke-width="10" cx="152.314" cy="100.55" rx="60.349" ry="60.349"/>
-					<ellipse fill="#FFFFFF" stroke="#66B6FC" stroke-width="10" cx="205.67" cy="187.698" rx="60.349" ry="60.349"/>
-					<ellipse fill="#FFFFFF" stroke="#66B6FC" stroke-width="10" cx="98.33" cy="187.699" rx="60.349" ry="60.349"/>
-					</svg>
-					
-				 </span>
-				<span class="o3-design">Design</span>
-			</div> 
-			<div class="o3-tag-line"> {{ site.tagline }}</div>
-</div></div>
-        </div>
+	<body>
+
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+
+					<ul class="o3-nav nav nav-pills pull-right">
+						<li>
+							<a href="/blog/">Blog</a>
+						</li>
+					</ul>
+					<div class="o3-logo">
+						<span class="o3-design">O3Design</span>
+
+						<span class="o3-logo-svg">
+							<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							width="0.8em" height="0.8em" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+								<ellipse fill="#66B6FC" cx="150.483" cy="149.824" rx="144.145" ry="145.824"/>
+								<ellipse fill="#FFFFFF" stroke="#66B6FC" stroke-width="10" cx="152.314" cy="100.55" rx="60.349" ry="60.349"/>
+								<ellipse fill="#FFFFFF" stroke="#66B6FC" stroke-width="10" cx="205.67" cy="187.698" rx="60.349" ry="60.349"/>
+								<ellipse fill="#FFFFFF" stroke="#66B6FC" stroke-width="10" cx="98.33" cy="187.699" rx="60.349" ry="60.349"/>
+							</svg> </span>
+					</div>
+					<div class="o3-tag-line">
+						{{ site.tagline }}
+					</div>
+				</div>
+			</div>
+		</div>
 		<hr/>
 
-    <div class="container">
+		<div class="container">
 
-      <div class="content">
-        {{ content }}
-      </div>
+			<div class="content">
+				{{ content }}
+			</div>
 
-      <footer>
-        <p>&copy; {{ site.author.name }} 2012 
-          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
-        </p>
-      </footer>
+		</div>
+		<!-- /container -->
+		<script type="text/javascript">
+			var $container = $('#content');
 
-    </div> <!-- /container -->
+			$container.imagesLoaded(function() {
+				$container.masonry({
+					itemSelector : '.post',
+					columnWidth : 50
+				});
+			});
 
-    {% include JB/analytics %}
-  </body>
+			$container.infinitescroll({
+				debug : true,
+				nextSelector : "#navigation a:first",
+				navSelector : "#navigation",
+				itemSelector : "#content > .post"
+			}, function(newElements) {
+				// hide new items while they are loading
+				var $newElems = $(newElements).css({
+					opacity : 0
+				});
+				// ensure that images load before adding to masonry layout
+				$newElems.imagesLoaded(function() {
+					// show elems now they're ready
+					$newElems.animate({
+						opacity : 1
+					});
+					$container.masonry('appended', $newElems, true);
+				});
+			});
+
+		</script>
+		{% include JB/analytics %}
+	</body>
 </html>
