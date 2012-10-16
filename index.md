@@ -6,6 +6,6 @@ group: navigation
 ---
 {% include JB/setup %}
 
-# Projects
+
 
 
