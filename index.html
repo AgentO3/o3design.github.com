@@ -42,22 +42,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 				color: #66b6fc;
 			}
 		.three{font-size: 25px; margin-right: 5px;position: relative; bottom: -0.25em;}
-		.line1{font-size: 2.05em;}
-		.line2{font-size: 1.4em;}
+		.line1{font-size: 78px;}
+		.line2{font-size: 54px;}
+		.line3{font-size: 40px;}
 		.o3-logo-svg{position: relative; bottom: -0.25em;}
 		h2{font-weight: bold; letter-spacing: -0.03em; font-size: 2.5em;}
 		.nav-top{font-size: 1.5em; margin-top: 10px; letter-spacing: -0.05em;}
 		.nav-top a{margin-right: 15px;}
+		.hide{display: none;}
+		.about{margin-top: 20px;}
+		.nav-top a{color:#4D4E53;}
+		.nav-top a:hover{color:#4D4E53; text-decoration: none;}
 	</style>
 </head>
 <body>
 	<div class="container">
 		<div class="row header">
 			<div class="pull-right nav-top">
-				<a href="#">My Work</a> 
-				<a href="#">About Me</a> 
-				<a href="#">Blog</a> 
-				<a href="#">Resume</a> 
+				<a href="#" class="hide">My Work</a> 
+				<a href="#" class="hide">About Me</a> 
+				<a href="#" class="hide">Blog</a> 
+				<a href="/resume.html">Resume</a> 
 			</div>
 			<div class="o3-logo">
 				O<span class="three">3</span><span class="o3-design">Design</span><span class="o3-logo-svg">
@@ -77,16 +82,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 			<p>
 				<span class="line1">Hello, my name is Owen</span> <br>
 				<span class="line2">I am a web designer and developer</span><br>
-				I have a passion for crafting clean UI and code
+				<span class="line3">I have a passion for crafting clean UI and code</span>
 			</p>	
 		</div>
 	</div>
 	<div class="container">
-		<div class="row work">
+		<div class="row work hide">
 			<h2>My Work</h2>
 			<div class="projects">
 				<div class="item">
-					<a href="#"><img src="http://placehold.it/250x150"></a>
+					<a href="/danbury-tattoo.html"><img src="http://placehold.it/250x150"></a>
 				</div>
 				<div class="item">
 					<a href="#"><img src="http://placehold.it/250x150"></a>
@@ -105,9 +110,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 				</div>
 			</div>
 		</div>
-		<div class="row about">
+		<div class="row about hide">
 			<h2>About Me</h2>
-			<p>I believe "simplicity is the ultimate sophistication". I apply this philosophy to the code I write and user experiences I design. I bring honesty, empathy, and a strong work ethic to whatever I create.</p>
+			<p>I believe "simplicity is the ultimate sophistication". I apply this philosophy to the code I write and user experiences I design. I bring honesty, empathy, and a strong work ethic to whatever project I am working on.</p>
 		</div>
 		<div class="row contact">
 			
